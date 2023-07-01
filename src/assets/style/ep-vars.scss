@@ -1,0 +1,63 @@
+@use 'sass:math';
+@use 'sass:map';
+@forward "../../../node_modules/element-plus/theme-chalk/src/common/var.scss" with (
+  $colors: (
+    "primary": (
+      "base": $cPrimary,
+    ),
+    "success": (
+      "base": $cSuccess,
+    ),
+    "warning": (
+      "base": $cWarning,
+    ),
+    "danger": (
+      "base": $cDanger,
+    ),
+    "error": (
+      "base": $cDanger,
+    ),
+    "info": (
+      "base": $cTextSub,
+    ),
+  ),
+  $text-color: (
+    "primary": $cText,
+    "regular": $cTextRead,
+    "secondary": $cTextSub,
+    "placeholder": $cTextPlaceholder,
+  ),
+  $border-color: (
+    "base": $cBorder,
+    "light": $cBorderL,
+  ),
+  // $bg-color: $cBackground !default,
+  $box-shadow: (
+    "base": (
+      0px 2px 16px 0px rgba(36, 42, 54, 0.04),
+      0px 2px 8px 0px rgba(36, 42, 54, 0.04),
+      0px 2px 4px 0px rgba(36, 42, 54, 0.04),
+    ),
+    "light": (
+      0px 2px 16px 0px rgba(36, 42, 54, 0.04),
+      0px 2px 8px 0px rgba(36, 42, 54, 0.04),
+      0px 2px 4px 0px rgba(36, 42, 54, 0.04),
+    ),
+  ),
+  $table: (
+    "text-color": rgba(0, 0, 0, 0.85),
+    "header-text-color": #000000,
+    "header-bg-color": #fafafa,
+  ),
+  $table-padding: (
+    "default": 16px 0,
+  ),
+  $empty:(
+    'padding': 40px 0,
+    'image-width': 260px,
+    'description-margin-top': 12px,
+    'bottom-margin-top': 12px,
+
+  ),
+
+);

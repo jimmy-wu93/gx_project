@@ -1,0 +1,80 @@
+@import "./reset.scss";
+@import "./font-family.scss";
+@import "./animate.scss";
+@import "./atomic.scss";
+@import "./transition.scss";
+@import "./ep-vars";
+@import "./ep";
+
+
+body, html, #app {
+  // overflow: hidden;
+
+}
+
+.title-with-blue {
+  padding-left: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 20px;
+  border-left: 4px solid #2d63fb;
+  margin-bottom: 16px;
+}
+.title-with-icon {
+  position: relative;
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #242A36;
+  line-height: 22px;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 12px;
+    height: 12px;
+    // background: url("../img/groupchat/titleIcon.png") no-repeat center/contain;
+  }
+  margin-bottom: 16px;
+}
+
+.material-wrapper{
+ min-height: calc(100vh - 49px - 64px);;
+}
+
+.vl-and{
+  position: relative;
+  padding-left: 40px;
+  min-height: 100px;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: #d1ddff;
+    z-index: 1;
+  }
+  &:after {
+    content: '且';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: #f0f4ff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #5682fc;
+    line-height: 24px;
+    text-align: center;
+    z-index: 2;
+  }
+}

@@ -1,0 +1,120 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: #2d63fb;
+    text-decoration: none;
+  }
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  outline: none;
+  user-select: none;
+  border: none;
+  cursor: pointer;
+
+  & span,
+  & i,
+  & strong,
+  & em {
+    user-select: none;
+  }
+}
+
+img,
+video {
+  vertical-align: top;
+  width: 100%;
+  outline: none;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  min-width: fit-content;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "PingFang SC", "Microsoft Yahei", "Helvetica Neue", STHeiti, Tahoma, Simsun, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  // color: $cText;
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'DIN';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/DIN-Medium.otf");
+}
+
+@font-face {
+  font-family: 'DIN-Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/DIN-Bold.otf");
+}
+@font-face {
+  font-family:'DOUYU';
+  font-style:normal;
+  font-weight:400;
+  src:url("../font/DOUYU.otf");
+}

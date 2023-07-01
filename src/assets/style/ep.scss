@@ -1,0 +1,231 @@
+@use "../../../node_modules/element-plus/theme-chalk/src/index.scss" as *;
+
+.el-table {
+  th {
+    color: rgba(0, 0, 0, 0.85) !important;
+    font-size: 14px;
+  }
+
+  th.is-leaf {
+    background-color: #fafafa !important;
+    border-bottom: none;
+  }
+
+  .el-table__row--striped {
+    background-color: rgba(245, 245, 245, 0.5);
+  }
+}
+
+.el-pagination {
+  padding: 0;
+
+  .btn-prev, .btn-next {
+    border: 1px solid rgba(217, 217, 217, 1);
+    border-radius: 4px;
+    margin: 0 2px;
+
+  }
+
+  .el-pager {
+    .number {
+      background-color: #fff;
+      border: 1px solid rgba(217, 217, 217, 1);
+      margin: 0 2px;
+      border-radius: 4px;
+
+    }
+
+    .active {
+      background-color: #2C68FF;
+      color: #fff;
+    }
+  }
+
+  .el-pagination__sizes {
+    margin: 0 4px;
+
+  }
+
+  .is-last {
+    margin-right: 0;
+  }
+}
+
+// dialog
+.el-dialog__body {
+  padding: 10px var(--el-dialog-padding-primary) var(--el-dialog-padding-primary);
+}
+
+.el-overlay-dialog {
+  //display: flex;
+  //align-items: center;
+  .el-dialog {
+    border-radius: 8px;
+    //margin-top: 0;
+    //margin-bottom: 0;
+  }
+}
+
+
+.el-tree-node__content {
+  height: 36px;
+}
+
+//button 样式调整
+// 调整focus也需要对hover和active进行优先级调整即使什么都不改
+.el-button {
+  &:focus {
+    color: var(--el-button-text-color);
+    background-color: var(--el-button-bg-color);
+    border-color: var(--el-button-border-color);
+  }
+
+  &:hover {
+    color: var(--el-button-hover-text-color);
+    background-color: var(--el-button-hover-bg-color);
+    border-color: var(--el-button-hover-border-color);
+  }
+
+  &:active {
+    color: var(--el-button-active-text-color);
+    background-color: var(--el-button-active-bg-color);
+    border-color: var(--el-button-border-active-color);
+  }
+
+  &.is-plain {
+    background-color: transparent;
+
+    &:focus {
+      color: var(--el-button-text-color);
+      border-color: var(--el-button-border-color);
+      background-color: transparent;
+    }
+
+    &:hover {
+      background-color: var(--el-button-hover-bg-color);
+      border-color: var(--el-button-hover-border-color);
+      color: var(--el-button-hover-text-color);
+    }
+
+    &:active {
+      color: var(--el-button-active-text-color);
+      background-color: var(--el-button-active-bg-color);
+      border-color: var(--el-button-active-border-color);
+    }
+  }
+
+  &.el-button--text, &.is-link {
+    padding: 0;
+    height: auto;
+
+    &:focus {
+      color: var(--el-button-text-color);
+    }
+
+    &:hover {
+      color: var(--el-button-hover-link-text-color);
+    }
+
+    &:active {
+      color: var(--el-button-active-color);
+    }
+  }
+
+  &.is-text {
+    &.__icon{
+      padding: 8px;
+    }
+    &:focus {
+      color: var(--el-button-text-color);
+      &:not(.is-disabled) {
+        background-color: transparent;
+      }
+    }
+
+    &:hover {
+      color: var(--el-button-text-color);
+      &:not(.is-disabled) {
+        background-color: var(--el-fill-color-light);
+        &.el-button--danger{
+          background-color: #FFF0F2;
+        }
+      }
+    }
+    &:active {
+      color: var(--el-button-text-color);
+      &:not(.is-disabled) {
+        background-color: var(--el-fill-color);
+        &.el-button--danger{
+          background-color: #FFF0F2;
+        }
+      }
+    }
+  }
+}
+
+
+//聚焦态调整 end
+
+//  bread
+.el-breadcrumb {
+  .el-breadcrumb__item {
+    .el-breadcrumb__inner {
+      color: rgba(36, 42, 54, 0.6);
+      font-weight: normal;
+
+      &:hover {
+        color: $cPrimary;
+      }
+
+    }
+
+    &:last-child {
+      .el-breadcrumb__inner {
+        color: rgba(36, 42, 54, 1);
+        font-weight: 600;
+
+      }
+    }
+
+    .el-breadcrumb__separator {
+      color: rgba(36, 42, 54, 0.6);
+      font-weight: normal;
+
+    }
+  }
+}
+
+.el-popover.el-popper {
+  min-width: 100px;
+}
+
+.el-empty {
+  line-height: 1.4;
+}
+
+.el-image-viewer__canvas {
+  img {
+    height: initial;
+    width: initial;
+  }
+}
+
+.checkbox_material {
+  &.el-checkbox {
+    height: auto;
+    transform: scale(1.43);
+    transform-origin: left center;
+  }
+}
+
+.el-cascader, .el-select {
+  &:hover {
+    position: relative;
+    z-index: 10;
+
+    .el-select__tags {
+      z-index: 10;
+
+    }
+  }
+}
