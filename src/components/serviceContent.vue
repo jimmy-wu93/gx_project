@@ -29,9 +29,11 @@
     margin-bottom: 50px;
   }
   .serviceItem {
-    // width: 60%;
+    width: 100%;
+    justify-content: space-around;
     .item {
       width: 360px;
+      overflow: hidden;
       .itemPic {
         width: 250px;
         height: 200px;
@@ -78,15 +80,15 @@
 import { reactive } from 'vue';
 
 const serviceItem = reactive([{
-  icon: 'http://www.fengjinketang.com/static/service-teacher.936c6d76.png',
+  icon: require('@/assets/img/serviceTeacher.png'),
   title: '三师伴读',
   desc: '授课老师、助理老师、班主任三师伴读、专业化教学'
 }, {
-  icon: '',
+  icon: require('@/assets/img/serviceInduce.png'),
   title: '阶段总结',
   desc: '定期阶段化学习总结学习目标更清晰'
 }, {
-  icon: '',
+  icon: require('@/assets/img/serviceWarning.png'),
   title: '提醒服务',
   desc: '班主任在线提供服务课程提醒、作业提醒、疑问解答等'
 }])

@@ -71,12 +71,12 @@ import { reactive } from 'vue';
 
 const analysisItem = reactive([{
   title: '基础练习课 提前打好基础',
-  iconUrl: 'https://hs-schedule-1302770967.cos.ap-chengdu.myqcloud.com/website/fengjin/pages/home/components/StudyCircle/before.png'
+  iconUrl: require('@/assets/img/lessonBefore.png')
 }, {
   title: '课上师生互动问答 全程沉浸式学习',
-  iconUrl: 'https://hs-schedule-1302770967.cos.ap-chengdu.myqcloud.com/website/fengjin/pages/home/components/StudyCircle/now.png'
+  iconUrl: require('@/assets/img/lesson.png')
 }, {
   title: '课程可会看 课后作业与答疑扩展活动',
-  iconUrl: 'https://hs-schedule-1302770967.cos.ap-chengdu.myqcloud.com/website/fengjin/pages/home/components/StudyCircle/after-new.png'
+  iconUrl: require('@/assets/img/lessonAfter.png')
 }])
 </script>

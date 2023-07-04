@@ -76,6 +76,9 @@
 </style>
 <template>
   <div class="firstBanner">
+    <!-- <el-affix :offset="120" z-index="1000">
+      <p>Offset top 120px</p>
+    </el-affix> -->
     <div class="bannerPic">
       <img src="@/assets/img/firstBanner.png" alt="" />
       <img src="@/assets/img/bannerLogo.png" alt="" class="bannerIcon" />

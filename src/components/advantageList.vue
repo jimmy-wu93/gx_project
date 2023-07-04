@@ -70,10 +70,14 @@
       <p>致力于为退休学员提供专业服务</p>
     </div>
     <div class="advantageItem flex-cc">
-      <div v-for="(item, k) in advantageItem" :key="k" class="itemContent">
-        <img :src="item" alt="" class="itemPic" />
+      <div
+        v-for="(item, k) in advantageItem"
+        :key="k"
+        class="itemContent cursor"
+      >
+        <img :src="item.picUrl" alt="" class="itemPic" />
         <div class="itemDesc flex-cc">
-          <p>覆盖三十余品类 百余课程</p>
+          <p>{{ item.title }}</p>
         </div>
       </div>
     </div>
@@ -82,12 +86,23 @@
 <script setup>
 import { reactive } from 'vue';
 
-const advantageItem = reactive([
-  'https://hs-schedule.hongsong.club/website/fengjin/./pages/home/components/AdvantageSection/ys-pic01.png',
-  'https://hs-schedule.hongsong.club/website/fengjin/./pages/home/components/AdvantageSection/ys-pic02.png',
-  'https://hs-schedule.hongsong.club/website/fengjin/./pages/home/components/AdvantageSection/ys-pic03.png',
-  'https://hs-schedule.hongsong.club/website/fengjin/./pages/home/components/AdvantageSection/ys-pic04.png',
-  'https://hs-schedule.hongsong.club/website/fengjin/./pages/home/components/AdvantageSection/ys-pic05.png',
-  'https://hs-schedule.hongsong.club/website/fengjin/./pages/home/components/AdvantageSection/ys-pic06.png'
-])
+const advantageItem = reactive([{
+  picUrl: require('@/assets/img/advantage_01.png'),
+  title: '课程品类覆盖全'
+}, {
+  picUrl: require('@/assets/img/advantage_02.png'),
+  title: '2互动线上退休学堂'
+}, {
+  picUrl: require('@/assets/img/advantage_03.png'),
+  title: '3完整学习闭环'
+}, {
+  picUrl: require('@/assets/img/advantage_04.png'),
+  title: '4配套学习资源'
+}, {
+  picUrl: require('@/assets/img/advantage_05.png'),
+  title: '5专业教研团队'
+}, {
+  picUrl: require('@/assets/img/advantage_06.png'),
+  title: '6三师伴读'
+},])
 </script>

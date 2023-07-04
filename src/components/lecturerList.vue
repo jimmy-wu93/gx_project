@@ -29,11 +29,16 @@
     font-weight: 400;
   }
   .lecturerContent {
-    // width: 300px;
     margin-top: 50px;
     .contentPic {
       width: 274px;
-      height: 218px;
+      min-height: 218px;
+      overflow: hidden;
+      margin-top: 12px;
+      &:hover {
+        transition: 1s;
+        transform: scale(1.1);
+      }
     }
   }
 }
@@ -45,6 +50,11 @@
   line-height: 200px;
   margin: 0;
   text-align: center;
+  z-index: 1;
+  &.is-active {
+    opacity: 0.9;
+    z-index: 2;
+  }
 }
 
 // .el-carousel__item:nth-child(2n) {
@@ -67,17 +77,18 @@
     </div>
     <div class="lecturerContent">
       <el-carousel
-        :interval="6000"
+        :interval="8000"
         type="card"
-        height="320px"
-        pause-on-hover
-        arrow="always"
-        loop
+        height="400px"
         indicator-position="outside"
+        @change="carouselChange"
       >
         <el-carousel-item v-for="(item, key) in lecturerItem" :key="key">
+          <div>
+            <img :src="item.picUrl" alt="" class="contentPic" />
+            <h3>{{ item.teacherName }}</h3>
+          </div>
           <!-- <h3 text="2xl" justify="center">{{ item }}</h3> -->
-          <img :src="item" alt="" class="contentPic" />
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -86,10 +97,24 @@
 <script setup>
 import { reactive } from 'vue'
 
-const lecturerItem = reactive([
-  'https://hs-schedule.hongsong.club/website/fengjin/pages/home/components/StarLecturer/lecturer-xiaojiang-gq.png',
-  'https://hs-schedule.hongsong.club/website/fengjin/pages/home/components/StarLecturer/lecturer-xiaotian-gq.png',
-  'https://hs-schedule.hongsong.club/website/fengjin/pages/home/components/StarLecturer/lecturer-xiaoyin-gq.png',
-  'https://hs-schedule.hongsong.club/website/fengjin/pages/home/components/StarLecturer/lecturer-xiaofei-gq.png',
-])
+const lecturerItem = reactive([{
+  teacherName: '明明老师',
+  picUrl: require('@/assets/img/teacherMing.png')
+}, {
+  teacherName: '成瑞老师',
+  picUrl: require('@/assets/img/teacherRui.png')
+}, {
+  teacherName: '德华老师',
+  picUrl: require('@/assets/img/teacherDe.png')
+}, {
+  teacherName: '谦煜老师',
+  picUrl: require('@/assets/img/teacherQian.png')
+}, {
+  teacherName: '夏南老师',
+  picUrl: require('@/assets/img/teacherXia.png')
+}])
+
+function carouselChange(e) {
+  console.log(e)
+}
 </script>

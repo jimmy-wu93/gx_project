@@ -37,9 +37,10 @@
     }
   }
   .receiveInfo {
+    width:100%;
     background: #9d202d;
-    padding: 70px 301px 70px 306px;
-    justify-content: space-between;
+    padding: 70px 0px 70px 0px;
+    justify-content: space-around;
     .infoAddress {
       font-size: 24px;
       color: #fff;
@@ -102,10 +103,13 @@
           <p>Copyright © 2021青松有伴</p>
         </div>
       </div>
-      <div>
+      <div class="flex-cc">
         <div class="infoPromotion">
-          <p class="infoAddress">青松有你</p>
+          <p class="infoAddress">青松有伴</p>
           <p class="fs-14 ft-cWhite fw-b mt-12">公众号二维码</p>
+        </div>
+        <div class="qrCode">
+          <img src="@/assets/img/qrCode.jpg" alt="" class="w-128 h-128 ml-24" />
         </div>
       </div>
     </div>
