@@ -31,6 +31,7 @@
   .serviceItem {
     width: 100%;
     justify-content: space-around;
+    padding:24px;
     .item {
       width: 360px;
       overflow: hidden;

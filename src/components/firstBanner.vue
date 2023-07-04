@@ -17,8 +17,8 @@
     .bannerTable {
       background: hsla(0, 0%, 100%, 0.8);
       position: absolute;
-      width: 360px;
-      height: 320px;
+      width: 32%;
+      height: 50%;
       bottom: 20px;
       border-radius: 8px;
       margin-bottom: 28px;
@@ -76,13 +76,10 @@
 </style>
 <template>
   <div class="firstBanner">
-    <!-- <el-affix :offset="120" z-index="1000">
-      <p>Offset top 120px</p>
-    </el-affix> -->
     <div class="bannerPic">
       <img src="@/assets/img/firstBanner.png" alt="" />
       <img src="@/assets/img/bannerLogo.png" alt="" class="bannerIcon" />
-      <div class="bannerTable flex-sc">
+      <div class="bannerTable flex-cc">
         <p class="tableTitle">免费领取</p>
         <p class="tableDescribe">精彩试听课</p>
         <!-- <input type="text" placeholder="请输入手机号"> -->

@@ -31,10 +31,10 @@
   }
   .advantageItem {
     margin: 0 auto;
-    width: 50%;
+    width: 80%;
     flex-wrap: wrap;
     .itemContent {
-      margin: 15px;
+      margin: 30px;
       width: 353px;
       height: 302px;
       background: #fff;
@@ -91,18 +91,18 @@ const advantageItem = reactive([{
   title: '课程品类覆盖全'
 }, {
   picUrl: require('@/assets/img/advantage_02.png'),
-  title: '2互动线上退休学堂'
+  title: '互动线上退休学堂'
 }, {
   picUrl: require('@/assets/img/advantage_03.png'),
-  title: '3完整学习闭环'
+  title: '完整学习闭环'
 }, {
   picUrl: require('@/assets/img/advantage_04.png'),
-  title: '4配套学习资源'
+  title: '配套学习资源'
 }, {
   picUrl: require('@/assets/img/advantage_05.png'),
-  title: '5专业教研团队'
+  title: '专业教研团队'
 }, {
   picUrl: require('@/assets/img/advantage_06.png'),
-  title: '6三师伴读'
+  title: '三师伴读'
 },])
 </script>

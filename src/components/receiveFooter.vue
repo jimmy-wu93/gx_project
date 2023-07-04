@@ -37,7 +37,7 @@
     }
   }
   .receiveInfo {
-    width:100%;
+    width: 100%;
     background: #9d202d;
     padding: 70px 0px 70px 0px;
     justify-content: space-around;
@@ -56,7 +56,7 @@
 }
 </style>
 <style lang="scss">
-.custom_el_button {
+.custom_footer_el_button {
   width: 156px;
   height: 56px;
   border-color: #ca4444;
@@ -88,7 +88,7 @@
       </div>
       <div class="freeTelephone flex-sc">
         <el-input class="custom_el_input" placeholder="请输入手机号"></el-input>
-        <el-button class="custom_el_button">立即领取</el-button>
+        <el-button class="custom_footer_el_button">立即领取</el-button>
       </div>
     </div>
     <div class="receiveInfo flex-sc">

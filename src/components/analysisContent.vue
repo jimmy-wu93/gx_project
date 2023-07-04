@@ -29,8 +29,9 @@
     margin-bottom: 50px;
   }
   .analysisItem {
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
+    padding: 24px;
     justify-content: space-around;
     .item {
       font-size: 20px;
