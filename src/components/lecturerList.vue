@@ -47,7 +47,7 @@
 .el-carousel__item {
   color: #475669;
   opacity: 0.75;
-  line-height: 200px;
+  line-height: 90px;
   margin: 0;
   text-align: center;
   z-index: 1;
@@ -69,7 +69,7 @@
   <div class="lecturerList">
     <div class="lecturerTitle flex-cc">
       <div class="titleDivider"></div>
-      <p class="titleName">明星讲师</p>
+      <p class="titleName">明星老师</p>
       <div class="titleDivider"></div>
     </div>
     <div class="lecturerDesc">
@@ -79,7 +79,7 @@
       <el-carousel
         :interval="8000"
         type="card"
-        height="400px"
+        height="300px"
         indicator-position="outside"
         @change="carouselChange"
       >
@@ -88,7 +88,6 @@
             <img :src="item.picUrl" alt="" class="contentPic" />
             <h3>{{ item.teacherName }}</h3>
           </div>
-          <!-- <h3 text="2xl" justify="center">{{ item }}</h3> -->
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -115,6 +114,6 @@ const lecturerItem = reactive([{
 }])
 
 function carouselChange(e) {
-  console.log(e)
+  // console.log(e)
 }
 </script>

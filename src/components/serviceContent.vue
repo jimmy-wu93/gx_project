@@ -31,7 +31,7 @@
   .serviceItem {
     width: 100%;
     justify-content: space-around;
-    padding:24px;
+    padding: 24px;
     .item {
       width: 360px;
       overflow: hidden;
@@ -48,6 +48,7 @@
         font-weight: 700;
       }
       .itemDesc {
+        white-space: pre-wrap;
         opacity: 0.5;
         font-size: 20px;
         color: #000;
@@ -62,7 +63,7 @@
   <div class="serviceContent">
     <div class="serviceTitle flex-cc">
       <div class="titleDivider"></div>
-      <p class="titleName">我们的服务</p>
+      <p class="titleName">课程服务</p>
       <div class="titleDivider"></div>
     </div>
     <div class="serviceDesc">
@@ -87,10 +88,10 @@ const serviceItem = reactive([{
 }, {
   icon: require('@/assets/img/serviceInduce.png'),
   title: '阶段总结',
-  desc: '定期阶段化学习总结学习目标更清晰'
+  desc: '定期阶段化学习总结\n学习目标更清晰'
 }, {
   icon: require('@/assets/img/serviceWarning.png'),
   title: '提醒服务',
-  desc: '班主任在线提供服务课程提醒、作业提醒、疑问解答等'
+  desc: '班主任在线提供服务课程提醒、\n作业提醒、疑问解答等'
 }])
 </script>

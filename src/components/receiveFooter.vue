@@ -65,17 +65,26 @@
   color: #fff;
   letter-spacing: 0;
   text-align: center;
-  font-weight: 400;
+  font-weight: 600;
   background: #ca4444;
   border-radius: 28px;
   margin-left: -20px;
   z-index: 1000;
+  &:hover {
+    background: #ffffff;
+    color: #ca4444;
+  }
 }
 .custom_el_input {
   .el-input__wrapper {
     width: 180px;
     height: 56px;
     border-radius: 30px 0px 0px 30px;
+  }
+  .el-input__inner {
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
   }
 }
 </style>
@@ -87,8 +96,15 @@
         <p class="receive">精彩试听课</p>
       </div>
       <div class="freeTelephone flex-sc">
-        <el-input class="custom_el_input" placeholder="请输入手机号"></el-input>
-        <el-button class="custom_footer_el_button">立即领取</el-button>
+        <el-input
+          class="custom_el_input"
+          placeholder="请输入手机号"
+          v-model="phoneNumber"
+          maxlength="11"
+        ></el-input>
+        <el-button class="custom_footer_el_button" @click="primaryButton"
+          >立即领取</el-button
+        >
       </div>
     </div>
     <div class="receiveInfo flex-sc">
@@ -104,7 +120,7 @@
         </div>
       </div>
       <div class="flex-cc">
-        <div class="infoPromotion">
+        <div class="infoPromotion flex-ccl">
           <p class="infoAddress">青松有伴</p>
           <p class="fs-14 ft-cWhite fw-b mt-12">公众号二维码</p>
         </div>
@@ -116,15 +132,34 @@
   </div>
 </template>
 <script setup>
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
+import { ElMessage } from 'element-plus';
 
 const addressInfo = reactive({
-  telephone: '400-600-6222',
-  address: '北京市朝阳区望京融科中心A座15层'
+  telephone: '400-6688-175',
+  address: '北京市亦庄经济开发区经开壹中心10号楼3层'
 })
 
 const filingsInfo = reactive({
-  content: '京ICP备19053887号-13 | 增值电信业务许可证：京B2-20201188',
-  permit: '（京）字第19253号'
+  content: '京ICP备2023001926号-2 | 增值电信业务许可证：京B2-20230848',
+  permit: '（京）字第11307号'
 })
+
+const phoneNumber = ref('')
+
+function primaryButton(e) {
+  let mobileReg = /^1[3-9]\d{9}$/
+  if (!phoneNumber.value.trim()) {
+    ElMessage.error('手机号码输入为空，请重新输入')
+  } else if (!mobileReg.test(phoneNumber.value)) {
+    ElMessage.error('手机号输入有误，请重新输入')
+  } else {
+    ElMessage({
+      message: '手机号提交成功',
+      type: 'success'
+    })
+    phoneNumber.value = ''
+  }
+}
+
 </script>

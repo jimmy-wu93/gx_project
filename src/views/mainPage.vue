@@ -1,5 +1,6 @@
 <style lang="scss" scoped>
 .mainPage {
+  width: 100%;
   .custom-el-affix {
     position: fixed;
     right: 0px;
@@ -13,7 +14,7 @@
     padding: 11px;
     .title {
       color: #585858;
-      font-weight: 600;
+      font-weight: bold;
     }
     .divider {
       width: 1px;
@@ -28,21 +29,26 @@
 </style>
 <style lang="scss">
 input::-webkit-input-placeholder {
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 20px;
+  line-height: 20px;
   color: #919191;
   font-weight: bold;
   text-align: center;
 }
+img {
+  -moz-user-drag: none; /* Firefox */
+  -khtml-user-drag: none; /* Safari */
+  -webkit-user-drag: none; /* Chrome 和 Safari */
+  -o-user-drag: none; /* Opera */
+}
 </style>
 <template>
   <div class="mainPage">
-    <el-affix :offset="800" class="custom-el-affix">
-      <!-- <el-button type="primary">Offset top 120px</el-button> -->
+    <el-affix :offset="1000" class="custom-el-affix">
       <div class="contactTelephone flex-cc">
         <div class="flex-ssl">
           <p class="fs-18 title">客服热线</p>
-          <p class="fs-26 ft-cDanger fw-b">400-600-6222</p>
+          <p class="fs-26 ft-cDanger fw-b">400-6688-175</p>
         </div>
         <div class="divider"></div>
         <img src="@/assets/img/telephone.png" alt="" class="w-38 h-38 ml-8" />

@@ -1,4 +1,26 @@
 <style lang="scss" scoped>
+@mixin maskStyle {
+  .mask {
+    position: relative;
+    display: inline-block;
+  }
+  .mask:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .mask:hover:before {
+    opacity: 1;
+  }
+}
+
 .categoryList {
   background: #f5f3f3;
   padding-top: 70px;
@@ -32,30 +54,40 @@
     }
   }
   .categoryContent {
-    width: 75%;
+    // width: 50%;
+    width: 800px;
+    height: 800px;
     margin-top: 50px;
     flex-wrap: wrap;
     .contentItem {
+      width: 375px;
+      height: 211px;
+      margin-bottom: 24px;
       position: relative;
       text-align: center;
       // float: left;
       &:hover {
         transform: translate(-3px, -3px);
         transition: all 0.6s;
+        opacity: 0.7;
       }
       .contentPic {
-        width: 375px;
-        height: 211px;
+        // width: 375px;
+        width: 100%;
+        // height: 211px;
         margin: 0px 12px 24px 12px;
         box-shadow: 12px 18px 18px -4px rgba(195, 197, 217, 1);
       }
       .contentDesc {
-        width: 100%;
+        width: calc(100% + 24px);
         position: absolute;
-        bottom: 110px;
+        bottom: 86px;
         z-index: 1000;
         font-size: 32px;
         font-weight: bold;
+        &:hover {
+          color: rgba($color: #000000, $alpha: 0.8);
+        }
       }
     }
   }
@@ -73,13 +105,13 @@
   <div class="categoryList flex-cc">
     <div class="categoryTitle flex-cc">
       <div class="titleDivider"></div>
-      <p class="titleName">覆盖品类</p>
+      <p class="titleName">课程覆盖</p>
       <div class="titleDivider"></div>
     </div>
     <div class="categoryDesc">
-      <p class="descName">为兴趣而学，点亮退休生活热情</p>
+      <p class="descName">不止于学习，更为点燃生活热情</p>
     </div>
-    <div class="categoryContent flex-cc">
+    <div class="categoryContent flex-ccl">
       <div
         v-for="(item, i) in categoryItem"
         :key="i"
@@ -88,7 +120,7 @@
         <img
           :src="require(`@/assets/img/system0${i + 1}.png`)"
           alt=""
-          class="contentPic br-8"
+          class="contentPic mask br-8"
         />
         <p class="contentDesc ft-cWhite">{{ item }}</p>
       </div>

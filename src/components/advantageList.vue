@@ -30,11 +30,13 @@
     margin-bottom: 50px;
   }
   .advantageItem {
-    margin: 0 auto;
-    width: 80%;
+    // margin: 0 auto;
+    justify-content: space-between;
+    width: 730px;
+    height: 978px;
     flex-wrap: wrap;
     .itemContent {
-      margin: 30px;
+      margin-bottom: 24px;
       width: 353px;
       height: 302px;
       background: #fff;
@@ -60,16 +62,16 @@
 }
 </style>
 <template>
-  <div class="advantageList">
+  <div class="advantageList flex-ccl">
     <div class="advantageTitle flex-cc">
       <div class="titleDivider"></div>
-      <p class="titleName">我们的优势</p>
+      <p class="titleName">课程优势</p>
       <div class="titleDivider"></div>
     </div>
     <div class="advantageDesc">
       <p>致力于为退休学员提供专业服务</p>
     </div>
-    <div class="advantageItem flex-cc">
+    <div class="advantageItem flex-ss">
       <div
         v-for="(item, k) in advantageItem"
         :key="k"
