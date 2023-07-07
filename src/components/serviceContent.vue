@@ -5,7 +5,7 @@
   .serviceTitle {
     width: 100%;
     .titleName {
-      font-size: 40px;
+      font-size: 1.1rem;
       color: #ca4444;
       letter-spacing: 0;
       text-align: center;
@@ -15,13 +15,13 @@
     .titleDivider {
       background: #979797;
       height: 2px;
-      width: 110px;
+      width: 10vw;
       opacity: 0.23;
     }
   }
   .serviceDesc {
     opacity: 0.7;
-    font-size: 24px;
+    font-size: 0.5rem;
     color: #545454;
     letter-spacing: 0;
     text-align: center;
@@ -30,18 +30,21 @@
   }
   .serviceItem {
     width: 100%;
+    padding: 36px;
     justify-content: space-around;
-    padding: 24px;
+    flex-wrap: wrap;
     .item {
-      width: 360px;
+      // width: 33%;
+      height: auto;
       overflow: hidden;
+      margin-bottom: 16px;
       .itemPic {
-        width: 250px;
+        width: 100%;
         height: 200px;
       }
       .itemTitle {
         margin: 30px 0px 20px 0px;
-        font-size: 30px;
+        font-size: 0.6rem;
         color: #db3143;
         letter-spacing: 0;
         text-align: center;
@@ -50,7 +53,7 @@
       .itemDesc {
         white-space: pre-wrap;
         opacity: 0.5;
-        font-size: 20px;
+        font-size: 0.4rem;
         color: #000;
         text-align: center;
         font-weight: 400;
@@ -84,7 +87,7 @@ import { reactive } from 'vue';
 const serviceItem = reactive([{
   icon: require('@/assets/img/serviceTeacher.png'),
   title: '三师伴读',
-  desc: '授课老师、助理老师、班主任三师伴读、专业化教学'
+  desc: '授课老师、助理老师、\n班主任三师伴读、专业化教学'
 }, {
   icon: require('@/assets/img/serviceInduce.png'),
   title: '阶段总结',

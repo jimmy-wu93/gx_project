@@ -12,6 +12,7 @@
     "element-plus": "^2.3.7",
     "lib-flexible": "^0.3.2",
     "px2rem-loader": "^0.1.9",
+    "vant": "^4.6.1",
     "vue": "^3.2.13",
     "vue-router": "^4.2.2"
   },
@@ -27,7 +28,8 @@
     "node-sass": "^5.0.0",
     "npm": "^9.7.2",
     "sass": "^1.63.6",
-    "sass-loader": "^13.3.2"
+    "sass-loader": "^13.3.2",
+    "unplugin-vue-components": "^0.25.1"
   },
   "eslintConfig": {
     "root": true,

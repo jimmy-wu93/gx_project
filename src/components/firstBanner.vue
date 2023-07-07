@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
 .firstBanner {
-  width: 100%;
+  width: 100vw;
   display: flex;
   //   background:linear-gradient(to right, rgb(46, 70, 39),#FFFFFF);
   background: rgb(46, 70, 39);
@@ -9,29 +9,33 @@
     position: relative;
     .bannerIcon {
       position: absolute;
-      width: 150px;
+      width: calc(100vw / 12);
       left: 42px;
-      top: 39px;
+      top: 3vh;
+    }
+    .bannerDetail {
+      max-width: 100vw;
+      min-height: 20vh;
     }
     .bannerTable {
       background: hsla(0, 0%, 100%, 0.8);
       position: absolute;
-      width: 32%;
+      width: 27%;
       height: 50%;
       bottom: 20px;
       border-radius: 8px;
       margin-bottom: 28px;
-      left: 90px;
+      left: 17%;
       padding: 25px;
       flex-direction: column;
       .tableTitle {
-        font-size: 36px;
+        font-size: 0.7rem;
         color: #5f5f5f;
         font-weight: bold;
         text-align: center;
       }
       .tableDescribe {
-        font-size: 29px;
+        font-size: 0.4rem;
         color: #5f5f5f;
         font-weight: 400;
         opacity: 0.6;
@@ -92,7 +96,7 @@
 <template>
   <div class="firstBanner">
     <div class="bannerPic">
-      <img src="@/assets/img/firstBanner.png" alt="" />
+      <img src="@/assets/img/banner02.png" alt="" class="bannerDetail" />
       <img src="@/assets/img/bannerLogo.png" alt="" class="bannerIcon" />
       <div class="bannerTable flex-cc">
         <p class="tableTitle">免费领取</p>

@@ -22,7 +22,7 @@
   }
   .advantageDesc {
     opacity: 0.7;
-    font-size: 24px;
+    font-size: 0.5rem;
     color: #545454;
     letter-spacing: 0;
     text-align: center;
@@ -30,27 +30,25 @@
     margin-bottom: 50px;
   }
   .advantageItem {
-    justify-content: space-between;
+    width: 100vw;
+    justify-content: space-around;
     flex-wrap: wrap;
-    margin: 0 auto;
     .itemContent {
+      width: 46%;
       margin-bottom: 24px;
-      margin-right: 24px;
-      // width: 33%;
-      // height: 302px;
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 2px 11px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       .itemPic {
         width: 100%;
-        height: 211px;
+        // height: 211px;
         // border-radius: 16px 16px 0 0;
       }
       .itemDesc {
-        height: 81px;
+        height: 60px;
         background: #ffffff;
-        font-size: 20px;
+        font-size: 0.4rem;
         color: #5f5f5f;
         letter-spacing: 0;
         text-align: center;
@@ -82,18 +80,6 @@
         </div>
       </div>
     </div>
-    <div class="advantageItem flex-cc">
-      <div
-        v-for="(item, k) in advantageItemPart2"
-        :key="k"
-        class="itemContent cursor"
-      >
-        <img :src="item.picUrl" alt="" class="itemPic" />
-        <div class="itemDesc flex-cc">
-          <p>{{ item.title }}</p>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 <script setup>
@@ -108,8 +94,7 @@ const advantageItemPart1 = reactive([{
 }, {
   picUrl: require('@/assets/img/advantage_03.png'),
   title: '完整学习闭环'
-},])
-const advantageItemPart2 = reactive([{
+}, {
   picUrl: require('@/assets/img/advantage_04.png'),
   title: '配套学习资源'
 }, {

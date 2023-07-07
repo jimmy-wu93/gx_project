@@ -35,6 +35,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     .item {
+      width: 50%;
       font-size: 0.4rem;
       color: rgba(0, 0, 0, 0.5);
       letter-spacing: 0;
@@ -44,7 +45,7 @@
     }
     .analysisPic {
       width: 100%;
-      height: 322px;
+    //   height: 322px;
       margin-bottom: 16px;
     }
   }

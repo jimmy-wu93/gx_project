@@ -21,7 +21,7 @@
   }
 }
 
-.categoryList {
+.mbCategoryList {
   background: #f5f3f3;
   padding-top: 70px;
   padding-bottom: 70px;
@@ -46,7 +46,7 @@
   .categoryDesc {
     .descName {
       opacity: 0.7;
-      font-size: 24px;
+      font-size: 0.5rem;
       color: #545454;
       letter-spacing: 0;
       text-align: center;
@@ -54,35 +54,28 @@
     }
   }
   .categoryContent {
-    width: 66%;
+    width: 100vw;
     margin-top: 50px;
     flex-wrap: wrap;
     justify-content: space-around;
     .contentItem {
-      width: 32%;
-      margin-bottom: 24px;
+      width: calc(50vw - 32px);
+      margin-bottom: 16px;
       position: relative;
-      text-align: center;
-      &:hover {
-        transform: translate(-3px, -3px);
-        transition: all 0.6s;
-        opacity: 0.7;
-      }
       .contentPic {
-        width: 100%;
-        height: 100%;
+        // width: 100%;
+        // height: 100%;
         box-shadow: 12px 18px 18px -4px rgba(195, 197, 217, 1);
       }
       .contentDesc {
+        text-align: center;
         width: 100%;
+        height: 100%;
         position: absolute;
         top: 40%;
         z-index: 1000;
-        font-size: 32px;
+        font-size: 0.5rem;
         font-weight: bold;
-        &:hover {
-          color: rgba($color: #000000, $alpha: 0.8);
-        }
       }
     }
   }
@@ -97,7 +90,7 @@
 }
 </style>
 <template>
-  <div class="categoryList flex-cc">
+  <div class="mbCategoryList flex-cc">
     <div class="categoryTitle flex-cc">
       <div class="titleDivider"></div>
       <p class="titleName">课程覆盖</p>
@@ -117,7 +110,9 @@
           alt=""
           class="contentPic mask br-8"
         />
-        <p class="contentDesc ft-cWhite">{{ item }}</p>
+        <div class="contentDesc ft-cWhite">
+          <p>{{ item }}</p>
+        </div>
       </div>
     </div>
     <div class="categoryExplain mt-40">
@@ -128,6 +123,4 @@
 <script setup>
 import { reactive } from 'vue';
 const categoryItem = ['国画', '手机摄影', '书法', '养生健康', '易学', '正念冥想'];
-
-// const categorySystemList = reactive(['@/assets/img/system01.png', '@/assets/img/system02.png', '@/assets/img/system03.png'])
 </script>

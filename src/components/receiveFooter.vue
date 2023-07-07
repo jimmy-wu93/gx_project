@@ -1,6 +1,5 @@
 <style lang="scss" scoped>
 .receiveFooter {
-  //   padding: 70px 301px 70px 306px;
   .receiveFree {
     justify-content: space-around;
     // background-image: url('https://hs-schedule.hongsong.club/website/fengjin/money.png');
@@ -38,19 +37,21 @@
   }
   .receiveInfo {
     width: 100%;
-    background: #9d202d;
-    padding: 70px 0px 70px 0px;
+    background: rgb(46, 70, 39);
+    padding: 70px;
     justify-content: space-around;
+    flex-wrap: wrap;
     .infoAddress {
-      font-size: 24px;
+      font-size: 0.6rem;
       color: #fff;
       font-weight: 600;
     }
     .infoFilings {
       margin-top: 50px;
-      font-size: 16px;
+      font-size: 0.3rem;
       color: #fff;
       font-weight: 400;
+      margin-bottom: 24px;
     }
   }
 }
@@ -90,7 +91,7 @@
 </style>
 <template>
   <div class="receiveFooter">
-    <div class="receiveFree flex-sc">
+    <!-- <div class="receiveFree flex-sc">
       <div class="freeTitle flex-sc">
         <p class="free">免费领取</p>
         <p class="receive">精彩试听课</p>
@@ -106,7 +107,7 @@
           >立即领取</el-button
         >
       </div>
-    </div>
+    </div> -->
     <div class="receiveInfo flex-sc">
       <div>
         <div class="infoAddress">

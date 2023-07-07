@@ -29,7 +29,7 @@
 </style>
 <style lang="scss">
 input::-webkit-input-placeholder {
-  font-size: 20px;
+  font-size: 0.4rem;
   line-height: 20px;
   color: #919191;
   font-weight: bold;

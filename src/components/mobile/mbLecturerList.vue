@@ -22,7 +22,7 @@
   }
   .lecturerDesc {
     opacity: 0.7;
-    font-size: 24px;
+    font-size: 0.5rem;
     color: #545454;
     letter-spacing: 0;
     text-align: center;
@@ -31,8 +31,8 @@
   .lecturerContent {
     margin-top: 50px;
     .contentPic {
-      width: 274px;
-      min-height: 218px;
+      width: 33vw;
+      max-height: 15vh;
       overflow: hidden;
       margin-top: 12px;
       &:hover {
@@ -56,14 +56,6 @@
     z-index: 2;
   }
 }
-
-// .el-carousel__item:nth-child(2n) {
-//   background-color: #99a9bf;
-// }
-
-// .el-carousel__item:nth-child(2n + 1) {
-//   background-color: #d3dce6;
-// }
 </style>
 <template>
   <div class="lecturerList">
@@ -79,7 +71,7 @@
       <el-carousel
         :interval="8000"
         type="card"
-        height="300px"
+        height="190px"
         indicator-position="outside"
         @change="carouselChange"
       >
