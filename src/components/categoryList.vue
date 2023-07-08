@@ -54,34 +54,39 @@
     }
   }
   .categoryContent {
-    width: 66%;
+    width: 65%;
     margin-top: 50px;
     flex-wrap: wrap;
     justify-content: space-around;
     .contentItem {
-      width: 32%;
-      margin-bottom: 24px;
+      width: 33%;
+      margin-bottom: 16px;
       position: relative;
       text-align: center;
       &:hover {
         transform: translate(-3px, -3px);
         transition: all 0.6s;
-        opacity: 0.7;
       }
       .contentPic {
-        width: 100%;
-        height: 100%;
+        position: relative;
+        max-width: 375px;
+        height: 211px;
+        border-radius: 16px;
         box-shadow: 12px 18px 18px -4px rgba(195, 197, 217, 1);
-      }
-      .contentDesc {
-        width: 100%;
-        position: absolute;
-        top: 40%;
-        z-index: 1000;
-        font-size: 32px;
-        font-weight: bold;
-        &:hover {
-          color: rgba($color: #000000, $alpha: 0.8);
+        &::after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: 9;
+          background: rgba(0, 0, 0, 0.6);
+          border-radius: 16px;
+          display: inline-block;
+        }
+        .contentDesc {
+          z-index: 1000;
+          font-size: 32px;
+          font-weight: bold;
         }
       }
     }
@@ -112,12 +117,16 @@
         :key="i"
         class="contentItem cursor"
       >
-        <img
-          :src="require(`@/assets/img/system0${i + 1}.png`)"
-          alt=""
-          class="contentPic mask br-8"
-        />
-        <p class="contentDesc ft-cWhite">{{ item }}</p>
+        <div
+          class="contentPic flex-ccl"
+          :style="{
+            background: `url(${item.imgUrl})`,
+            'background-repeat': 'no-repeat',
+            'background-size': 'cover',
+          }"
+        >
+          <p class="contentDesc ft-cWhite">{{ item.title }}</p>
+        </div>
       </div>
     </div>
     <div class="categoryExplain mt-40">
@@ -126,8 +135,24 @@
   </div>
 </template>
 <script setup>
-import { reactive } from 'vue';
-const categoryItem = ['国画', '手机摄影', '书法', '养生健康', '易学', '正念冥想'];
-
-// const categorySystemList = reactive(['@/assets/img/system01.png', '@/assets/img/system02.png', '@/assets/img/system03.png'])
+import { computed, reactive } from 'vue';
+const categoryItem = [{
+  title: '国画',
+  imgUrl: require('../assets/img/system01.png')
+}, {
+  title: '手机摄影',
+  imgUrl: require('../assets/img/system02.png')
+}, {
+  title: '书法',
+  imgUrl: require('../assets/img/system03.png')
+}, {
+  title: '养生健康',
+  imgUrl: require('../assets/img/system04.png')
+}, {
+  title: '易学',
+  imgUrl: require('../assets/img/system05.png')
+}, {
+  title: '正念冥想',
+  imgUrl: require('../assets/img/system06.png')
+},];
 </script>

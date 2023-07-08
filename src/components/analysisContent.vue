@@ -43,7 +43,7 @@
       font-weight: 600;
     }
     .analysisPic {
-      width: 100%;
+      width: 331px;
       height: 322px;
       margin-bottom: 16px;
     }
