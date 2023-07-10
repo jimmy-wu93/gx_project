@@ -60,19 +60,28 @@
     justify-content: space-around;
     .contentItem {
       width: calc(50vw - 32px);
+      height: 100%;
       margin-bottom: 16px;
       position: relative;
       .contentPic {
-        // width: 100%;
-        // height: 100%;
+        position: relative;
+        width: 100%;
+        min-height: 13vh;
+        border-radius: 8px;
         box-shadow: 12px 18px 18px -4px rgba(195, 197, 217, 1);
+        &::after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: 9;
+          background: rgba(0, 0, 0, 0.6);
+          border-radius: 8px;
+          display: inline-block;
+        }
       }
       .contentDesc {
         text-align: center;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 40%;
         z-index: 1000;
         font-size: 0.5rem;
         font-weight: bold;
@@ -105,6 +114,27 @@
         :key="i"
         class="contentItem cursor"
       >
+        <div
+          class="contentPic flex-ccl"
+          :style="{
+            background: `url(${item.imgUrl})`,
+            'background-repeat': 'no-repeat',
+            'background-size': 'cover',
+          }"
+        >
+          <p class="contentDesc ft-cWhite">{{ item.title }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="categoryExplain mt-40">
+      <p>覆盖类目包括但不限于展示内容</p>
+    </div>
+    <!-- <div class="categoryContent flex-cc">
+      <div
+        v-for="(item, i) in categoryItem"
+        :key="i"
+        class="contentItem cursor"
+      >
         <img
           :src="require(`@/assets/img/system0${i + 1}.png`)"
           alt=""
@@ -117,10 +147,28 @@
     </div>
     <div class="categoryExplain mt-40">
       <p>覆盖类目包括但不限于展示内容</p>
-    </div>
+    </div> -->
   </div>
 </template>
 <script setup>
 import { reactive } from 'vue';
-const categoryItem = ['国画', '手机摄影', '书法', '养生健康', '易学', '正念冥想'];
+const categoryItem = [{
+  title: '国画',
+  imgUrl: require('../../assets/img/system01.png')
+}, {
+  title: '手机摄影',
+  imgUrl: require('../../assets/img/system02.png')
+}, {
+  title: '书法',
+  imgUrl: require('../../assets/img/system03.png')
+}, {
+  title: '养生健康',
+  imgUrl: require('../../assets/img/system04.png')
+}, {
+  title: '易学',
+  imgUrl: require('../../assets/img/system05.png')
+}, {
+  title: '正念冥想',
+  imgUrl: require('../../assets/img/system06.png')
+},];
 </script>

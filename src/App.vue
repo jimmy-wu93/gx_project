@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import { provide } from 'vue'
 
 export default {
   name: 'App',
@@ -15,12 +16,13 @@ export default {
       console.log('pc端'),
         this.$router.replace('/pc_index')
     }
+    provide('isMobile', this._isMobile())
   },
   methods: {
     // 判断是否是移动端，如果是返回true
     _isMobile() {
-      let flag = navigator.userAgent.match(/(phone|pad|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone) /i)
-      console.log(navigator.userAgent,flag)
+      const device = navigator.userAgent;
+      let flag = device.match(/(phone|pad|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone) /i) || device.indexOf('iPad') > -1 
       return flag
     }
   }

@@ -38,17 +38,41 @@
   .receiveInfo {
     width: 100%;
     background: rgb(46, 70, 39);
-    padding: 70px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 60px;
+    padding-top: 6%;
     justify-content: space-around;
     flex-wrap: wrap;
-    .infoAddress {
-      font-size: 0.6rem;
+    flex-direction: row-reverse;
+    .infoTitle {
+      font-size: 0.5rem;
       color: #fff;
       font-weight: 600;
     }
+    .infoAddress {
+      font-size: 0.4rem;
+      color: #fff;
+      font-weight: 600;
+      // line-height: 0.4rem;
+    }
+    .infoMessage {
+      height: 40%;
+      padding-bottom: 16px;
+    }
+    .qrCodeMobile {
+      width: 65px;
+      height: 65px;
+      margin-left: 5%;
+    }
+    .qrCodePc {
+      width: 128px;
+      height: 128px;
+      margin-left: 24px;
+    }
     .infoFilings {
       margin-top: 50px;
-      font-size: 0.3rem;
+      font-size: 0.2rem;
       color: #fff;
       font-weight: 400;
       margin-bottom: 24px;
@@ -91,24 +115,16 @@
 </style>
 <template>
   <div class="receiveFooter">
-    <!-- <div class="receiveFree flex-sc">
-      <div class="freeTitle flex-sc">
-        <p class="free">免费领取</p>
-        <p class="receive">精彩试听课</p>
+    <div class="receiveInfo flex-cc">
+      <div class="flex-ec infoMessage" :class="[isMobile ? 'w100' : '']">
+        <div class="infoPromotion flex-ccl">
+          <p class="infoTitle">青松有伴</p>
+          <p class="fs-13 ft-cWhite fw-b mt-6">公众号二维码</p>
+        </div>
+        <div :class="[isMobile ? 'qrCodeMobile' : 'qrCodePc']">
+          <img src="@/assets/img/qrCode.jpg" alt="" class="" />
+        </div>
       </div>
-      <div class="freeTelephone flex-sc">
-        <el-input
-          class="custom_el_input"
-          placeholder="请输入手机号"
-          v-model="phoneNumber"
-          maxlength="11"
-        ></el-input>
-        <el-button class="custom_footer_el_button" @click="primaryButton"
-          >立即领取</el-button
-        >
-      </div>
-    </div> -->
-    <div class="receiveInfo flex-sc">
       <div>
         <div class="infoAddress">
           <p>咨询热线：{{ addressInfo.telephone }}</p>
@@ -120,20 +136,11 @@
           <p>Copyright © 2021青松有伴</p>
         </div>
       </div>
-      <div class="flex-cc">
-        <div class="infoPromotion flex-ccl">
-          <p class="infoAddress">青松有伴</p>
-          <p class="fs-14 ft-cWhite fw-b mt-12">公众号二维码</p>
-        </div>
-        <div class="qrCode">
-          <img src="@/assets/img/qrCode.jpg" alt="" class="w-128 h-128 ml-24" />
-        </div>
-      </div>
     </div>
   </div>
 </template>
 <script setup>
-import { reactive, ref } from 'vue';
+import { computed, inject, reactive, ref } from 'vue';
 import { ElMessage } from 'element-plus';
 
 const addressInfo = reactive({
@@ -162,5 +169,10 @@ function primaryButton(e) {
     phoneNumber.value = ''
   }
 }
+
+const isMobile = computed(() => {
+  let result = inject('isMobile');
+  return result
+})
 
 </script>

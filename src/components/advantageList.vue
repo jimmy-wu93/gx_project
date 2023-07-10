@@ -30,21 +30,21 @@
     margin-bottom: 50px;
   }
   .advantageItem {
+    width: 70%;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 auto;
     .itemContent {
       margin-bottom: 24px;
       margin-right: 24px;
-      // width: 33%;
-      // height: 302px;
+      width: 30%;
+      min-height: 302px;
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 2px 11px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       .itemPic {
         width: 100%;
-        height: 211px;
+        // height: 211px;
         // border-radius: 16px 16px 0 0;
       }
       .itemDesc {
@@ -82,7 +82,7 @@
         </div>
       </div>
     </div>
-    <div class="advantageItem flex-cc">
+    <!-- <div class="advantageItem flex-cc">
       <div
         v-for="(item, k) in advantageItemPart2"
         :key="k"
@@ -93,7 +93,7 @@
           <p>{{ item.title }}</p>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script setup>
@@ -108,6 +108,15 @@ const advantageItemPart1 = reactive([{
 }, {
   picUrl: require('@/assets/img/advantage_03.png'),
   title: '完整学习闭环'
+}, {
+  picUrl: require('@/assets/img/advantage_04.png'),
+  title: '配套学习资源'
+}, {
+  picUrl: require('@/assets/img/advantage_05.png'),
+  title: '专业教研团队'
+}, {
+  picUrl: require('@/assets/img/advantage_06.png'),
+  title: '三师伴读'
 },])
 const advantageItemPart2 = reactive([{
   picUrl: require('@/assets/img/advantage_04.png'),

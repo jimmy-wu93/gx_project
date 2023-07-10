@@ -26,7 +26,7 @@
     }
     .bannerIcon {
       position: absolute;
-      width: calc(100vw / 8);
+      width: calc(100vw / 7);
       left: 5%;
       top: 10%;
     }
@@ -116,7 +116,7 @@
     </el-affix>
     <div class="mbBanner">
       <van-image
-        :src="require('@/assets/img/firstBanner.png')"
+        :src="require('@/assets/img/mbBanner.png')"
         fit="space-down"
         class="custom-vant-banner-image"
       />

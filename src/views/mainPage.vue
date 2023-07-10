@@ -7,11 +7,12 @@
     z-index: 1000;
   }
   .contactTelephone {
+    width: 260px;
+    height: 76px;
     background: #fff;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.03);
     border-radius: 8px 1px 1px 8px;
     border: 1px solid #e6e6e6;
-    padding: 11px;
     .title {
       color: #585858;
       font-weight: bold;
@@ -44,7 +45,11 @@ img {
 </style>
 <template>
   <div class="mainPage">
-    <el-affix :offset="1000" class="custom-el-affix">
+    <el-affix
+      position="top"
+      :offset="offsetHeight || 300"
+      class="custom-el-affix"
+    >
       <div class="contactTelephone flex-cc">
         <div class="flex-ssl">
           <p class="fs-18 title">客服热线</p>
@@ -71,4 +76,9 @@ import AdvantageList from '../components/advantageList.vue';
 import ServiceContent from '@/components/serviceContent.vue';
 import AnalysisContent from '@/components/analysisContent.vue';
 import ReceiveFooter from '../components/receiveFooter.vue';
+import { computed, ref } from 'vue';
+
+const offsetHeight = computed(() => {
+  return window.screen.availHeight - 260
+})
 </script>
