@@ -26,9 +26,9 @@
     }
     .bannerIcon {
       position: absolute;
-      width: calc(100vw / 7);
+      width: calc(100vw / 5);
       left: 5%;
-      top: 10%;
+      top: 5%;
     }
   }
   .mbRegister {
